@@ -1,6 +1,6 @@
 import { http } from "./http";
 
-const API_URL = "http://localhost:10000";
+const API_URL = "https://edustack-vyc5.onrender.com";
 
 const ANON_KEY = "anonId";
 const SESS_KEY = "sessionId";
