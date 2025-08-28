@@ -12,7 +12,7 @@ const app = express();
 
 app.use(helmet());
 
-const allowedOrigins = ["http://localhost:3000", "http://localhost:8080"];
+const allowedOrigins = [process.env.CORS_ORIGIN, "http://localhost:3000", "http://localhost:8080"];
 
 app.use(
   cors({
