@@ -147,7 +147,7 @@ const verifyEmail = async (req, res, next) => {
     // ✅ new: issue a JWT so the Welcome page can be authenticated
     const jwt = signToken(user._id.toString());
 
-    const appUrl = process.env.APP_URL || "http://localhost:3000";
+    const appUrl = process.env.APP_URL || "https://edustack-dl.netlify.app/";
     // NOTE: token in URL is fine for dev; in production, prefer setting an httpOnly cookie.
     return res.redirect(`${appUrl}/welcome?verified=1&token=${jwt}`);
   } catch (err) {
@@ -224,7 +224,7 @@ const forgotPassword = async (req, res, next) => {
     user.passwordResetExpires = new Date(Date.now() + 60 * 60 * 1000); // 1h
     await user.save();
 
-    const appUrl = process.env.APP_URL || "http://localhost:3000";
+    const appUrl = process.env.APP_URL || "https://edustack-dl.netlify.app/";
     const resetUrl = `${appUrl}/reset-password?token=${raw}`;
 
     await sendMail({
