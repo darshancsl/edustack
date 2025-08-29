@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = (process.env.API_URL as string) || 'http://localhost:5001';
+const baseURL = (process.env.API_URL as string) || 'https://edustack-vyc5.onrender.com';
 
 export const http = axios.create({
   baseURL,

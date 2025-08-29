@@ -95,7 +95,7 @@ const register = async (req, res, next) => {
     await Event.create({ type: 'signup', userId: user._id, ts: new Date() });
     // Verification link hits backend and then redirects to frontend welcome
     const verifyUrl = `${
-      process.env.API_URL || "http://localhost:5001"
+      process.env.API_URL || 'https://edustack-vyc5.onrender.com'
     }/api/auth/verify-email?token=${raw}`;
 
     await sendMail({
